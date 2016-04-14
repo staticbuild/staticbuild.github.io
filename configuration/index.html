@@ -1,1 +1,38 @@
-<!DOCTYPE html><html lang="en" dir="auto"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Staticbuild (beta) &middot; A simple static website builder.</title><meta name="description" content="Staticbuild is a simple static website builder that lets you use Jade or Nunjucks templates to build your site."><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" type="text/css" href=""/><link rel="stylesheet" type="text/css" href=""/><link rel="stylesheet" type="text/css" href="/lib/main/styles-9df19cedae.css"/><script type="text/javascript" src="/lib/jqbs/scripts-b0c3b7d58e.js"></script><script type="text/javascript" src="/lib/ko/scripts-2907ce55e3.js"></script><script type="text/javascript" src="/lib/main/scripts-5191973edb.js"></script></head><body><div id="topnav" role="navigation" class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/lib/img/graffiti-logo-225x42.png" width="225" height="42"/></a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/#beta" title="(Project is currently in beta.)"><strong>(beta)</strong></a></li><li><a href="/getting-started/">Getting Started</a></li><li><a href="/configuration">Configuration</a></li><li><a href="/api">API</a></li></ul><ul class="nav navbar-nav navbar-right"><li><a href="https://www.npmjs.com/package/staticbuild">NPM</a></li><li><a href="https://github.com/staticbuild/staticbuild">GitHub</a></li></ul></div></div></div><div class="container"><h1>Configuration</h1><div class="row"><div class="col-xs-12 text-center"><p>Content...</p></div></div></div><div class="container"><div class="row"><div class="col-xs-12"><div class="text-center"><em class="pull-left">Copyright @ Devoptix LLC 2016</em><em>This site built with <a href="https://github.com/staticbuild/staticbuild">staticbuild</a>.</em><em class="pull-right">staticbuild.github.io v0.0.1 <small>(en) </small>&nbsp;<a href="https://github.com/staticbuild/staticbuild/issues">Help</a></em></div></div></div></div></body></html>
+<!DOCTYPE html><html lang="en" dir="auto"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Staticbuild (beta) &middot; A simple static website builder.</title><meta name="description" content="Staticbuild is a simple static website builder that lets you use Jade or Nunjucks templates to build your site."><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" type="text/css" href=""/><link rel="stylesheet" type="text/css" href=""/><link rel="stylesheet" type="text/css" href="/lib/main/styles-9df19cedae.css"/><script type="text/javascript" src="/lib/jqbs/scripts-b0c3b7d58e.js"></script><script type="text/javascript" src="/lib/ko/scripts-2907ce55e3.js"></script><script type="text/javascript" src="/lib/main/scripts-5191973edb.js"></script></head><body><div id="topnav" role="navigation" class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/lib/img/graffiti-logo-225x42.png" width="225" height="42"/></a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/#beta" title="(Project is currently in beta.)"><strong>(beta)</strong></a></li><li><a href="/getting-started/">Getting Started</a></li><li><a href="/configuration">Configuration</a></li><li><a href="/api">API</a></li></ul><ul class="nav navbar-nav navbar-right"><li><a href="https://www.npmjs.com/package/staticbuild">NPM</a></li><li><a href="https://github.com/staticbuild/staticbuild">GitHub</a></li></ul></div></div></div><div class="container"><h1>Configuration</h1><div class="row"><div class="col-xs-12 text-center"><p>Most <a href="/api">API</a> fields are also configurable from this file.</p><p>The following shows the configuration file from the basic template, with some inline comments.</p></div></div><div class="row"><div class="col-xs-12"><pre><p class="hljs">{
+  <span class="hljs-comment">// Salt for any file-name hashing that is based on version number.</span>
+  <span class="hljs-string">"versionHash"</span>: { <span class="hljs-string">"salt"</span>: <span class="hljs-string">"MDAEaMF8Q8rhwCGQuaeCC4Za9GLHUeZr"</span> },
+  <span class="hljs-comment">// Maps url `/bower` to the `bower_components` directory.</span>
+  <span class="hljs-string">"pathMap"</span>: {
+    <span class="hljs-string">"bower"</span>: { <span class="hljs-string">"fs"</span>: <span class="hljs-string">"bower_components"</span> }
+  },
+  <span class="hljs-comment">// Global view context module available to rendered views.</span>
+  <span class="hljs-string">"contextFile"</span>: <span class="hljs-string">"./view-context.js"</span>,
+  <span class="hljs-comment">// Script and Style bundles</span>
+  <span class="hljs-string">"bundle"</span>: {
+    <span class="hljs-string">"jqbs"</span>: {
+      <span class="hljs-string">"scripts"</span>: [
+        <span class="hljs-string">"/bower_components/jquery/dist/jquery.js"</span>,
+        <span class="hljs-string">"/bower_components/bootstrap/dist/js/bootstrap.js"</span>
+      ]
+    },
+    <span class="hljs-string">"ko"</span>: {
+      <span class="hljs-string">"scripts"</span>: [
+        {
+          <span class="hljs-string">"src"</span>: <span class="hljs-string">"/bower_components/knockout/dist/knockout.js"</span>,
+          <span class="hljs-string">"min"</span>: <span class="hljs-string">"/bower_components/knockout/dist/knockout.js"</span>
+        }
+      ]
+    },
+    <span class="hljs-comment">// The main bundle style `site.css` is compiled from `site.less`, which</span>
+    <span class="hljs-comment">// includes bootstrap.</span>
+    <span class="hljs-string">"main"</span>: {
+      <span class="hljs-string">"scripts"</span>: [
+        <span class="hljs-string">"/lib/js/site.js"</span>
+      ],
+      <span class="hljs-string">"styles"</span>: [
+        <span class="hljs-string">"/lib/css/monokai-sublime.css"</span>,
+        <span class="hljs-string">"/lib/css/site.css"</span>
+      ]
+    }
+  }
+}</p></pre></div></div></div><div class="container"><div class="row"><div class="col-xs-12"><div class="text-center"><em class="pull-left">Copyright @ Devoptix LLC 2016</em><em>This site built with <a href="https://github.com/staticbuild/staticbuild">staticbuild</a>.</em><em class="pull-right">staticbuild.github.io v0.0.1 <small>(en) </small>&nbsp;<a href="https://github.com/staticbuild/staticbuild/issues">Help</a></em></div></div></div></div></body></html>

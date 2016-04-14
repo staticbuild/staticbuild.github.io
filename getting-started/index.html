@@ -1,1 +1,54 @@
-<!DOCTYPE html><html lang="en" dir="auto"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Staticbuild (beta) &middot; A simple static website builder.</title><meta name="description" content="Staticbuild is a simple static website builder that lets you use Jade or Nunjucks templates to build your site."><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" type="text/css" href=""/><link rel="stylesheet" type="text/css" href=""/><link rel="stylesheet" type="text/css" href="/lib/main/styles-9df19cedae.css"/><script type="text/javascript" src="/lib/jqbs/scripts-b0c3b7d58e.js"></script><script type="text/javascript" src="/lib/ko/scripts-2907ce55e3.js"></script><script type="text/javascript" src="/lib/main/scripts-5191973edb.js"></script></head><body><div id="topnav" role="navigation" class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/lib/img/graffiti-logo-225x42.png" width="225" height="42"/></a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/#beta" title="(Project is currently in beta.)"><strong>(beta)</strong></a></li><li><a href="/getting-started/">Getting Started</a></li><li><a href="/configuration">Configuration</a></li><li><a href="/api">API</a></li></ul><ul class="nav navbar-nav navbar-right"><li><a href="https://www.npmjs.com/package/staticbuild">NPM</a></li><li><a href="https://github.com/staticbuild/staticbuild">GitHub</a></li></ul></div></div></div><div class="container"><h1>Getting Started</h1><div class="row"><div class="col-xs-12 text-center"><p>Content...</p></div></div></div><div class="container"><div class="row"><div class="col-xs-12"><div class="text-center"><em class="pull-left">Copyright @ Devoptix LLC 2016</em><em>This site built with <a href="https://github.com/staticbuild/staticbuild">staticbuild</a>.</em><em class="pull-right">staticbuild.github.io v0.0.1 <small>(en) </small>&nbsp;<a href="https://github.com/staticbuild/staticbuild/issues">Help</a></em></div></div></div></div></body></html>
+<!DOCTYPE html><html lang="en" dir="auto"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Staticbuild (beta) &middot; A simple static website builder.</title><meta name="description" content="Staticbuild is a simple static website builder that lets you use Jade or Nunjucks templates to build your site."><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" type="text/css" href=""/><link rel="stylesheet" type="text/css" href=""/><link rel="stylesheet" type="text/css" href="/lib/main/styles-9df19cedae.css"/><script type="text/javascript" src="/lib/jqbs/scripts-b0c3b7d58e.js"></script><script type="text/javascript" src="/lib/ko/scripts-2907ce55e3.js"></script><script type="text/javascript" src="/lib/main/scripts-5191973edb.js"></script></head><body><div id="topnav" role="navigation" class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="navbar-brand"><img src="/lib/img/graffiti-logo-225x42.png" width="225" height="42"/></a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="/#beta" title="(Project is currently in beta.)"><strong>(beta)</strong></a></li><li><a href="/getting-started/">Getting Started</a></li><li><a href="/configuration">Configuration</a></li><li><a href="/api">API</a></li></ul><ul class="nav navbar-nav navbar-right"><li><a href="https://www.npmjs.com/package/staticbuild">NPM</a></li><li><a href="https://github.com/staticbuild/staticbuild">GitHub</a></li></ul></div></div></div><div class="container"><h1>Getting Started</h1><div class="row"><div class="col-xs-12"><p></p><h3 id="global-install">Global Install</h3><p>Run</p><p><code>npm install -g staticbuild</code></p><p>Then, to setup a new project in the specified path:</p><p><code>staticbuild setup [path]</code></p><p>Output</p><pre><code>Setting up basic site template....
+Done.
+When ready, please run: npm install &amp;&amp; bower install
+To view the site during development: npm run dev
+To generate the site for production: gulp
+</code></pre><p><em>(The path argument is optional and defaults to the current directory.)</em></p><h3 id="manual-installation">Manual Installation</h3><p>Run</p><p><code>npm install --save-dev staticbuild</code></p><p>In the <code>package.json</code> file for your project, add one of the following and then run it with <code>npm run dev</code>. Look at the <code>demo</code> projects for more details.</p><pre><code class="lang-json">&quot;scripts&quot;: {
+  &quot;dev&quot;: &quot;staticbuild dev .&quot;
+}
+</code></pre><p>or</p><pre><code class="lang-json">&quot;scripts&quot;: {
+  &quot;dev&quot;: &quot;staticbuild dev path/to/staticbuild.json&quot;
+}
+</code></pre><h2 id="command-line-interface">Command Line Interface</h2><p>The default command right now is to just run the development server. That may change in the future and more commands will be added to generate files like a gulp or grunt file.</p><h3 id="help">Help</h3><pre><code>staticbuild v0.12.4 - A static website generator and development server.
+
+Usage:
+  staticbuild [command] [options]
+
+Commands:
+  dev    Run the development web server.
+  setup  Setup a new project.
+
+Options:
+  -v, --version  Show version number.  [boolean]
+  -h, --help     Show help.  [boolean]
+  -V, --verbose  Enables verbose output.  [count]
+</code></pre><h3 id="development-server">Development Server</h3><pre><code>staticbuild v0.12.4 - Development server.
+
+    Runs a local http server to dynamically render static content during development.
+
+Usage:
+  staticbuild dev [options] &lt;path&gt;
+
+Required:
+  path           Path to a staticbuild.json file or directory to find one.
+                 If no path is supplied, the current directory is used.
+
+Options:
+  -v, --version       Show version number.  [boolean]
+  -h, --help, --help  Show help.  [boolean]
+  -b, --bundling      Enable bundling.  [boolean] [default: false]
+  -r, --restart       Number of seconds to delay nodemon restarts.  [number] [default: 1]
+  --no-restart        Disables the built-in nodemon server restart.
+  -V, --verbose       Enables verbose output.  [count]
+</code></pre><h3 id="setup">Setup</h3><p>At the time of this writing, this command simply creates a default <code>staticbuild.json</code> file.</p><pre><code>staticbuild v0.12.4 - Setup.
+
+    Interactive setup to create a new project.
+
+Usage:
+  staticbuild setup [options] [path]
+
+Options:
+  -v, --version       Show version number.  [boolean]
+  -h, --help, --help  Show help.  [boolean]
+  -V, --verbose       Enables verbose output.  [count]
+</code></pre><p></p></div></div></div><div class="container"><div class="row"><div class="col-xs-12"><div class="text-center"><em class="pull-left">Copyright @ Devoptix LLC 2016</em><em>This site built with <a href="https://github.com/staticbuild/staticbuild">staticbuild</a>.</em><em class="pull-right">staticbuild.github.io v0.0.1 <small>(en) </small>&nbsp;<a href="https://github.com/staticbuild/staticbuild/issues">Help</a></em></div></div></div></div></body></html>
