@@ -5,16 +5,22 @@
   <span class="hljs-string">"pathMap"</span>: {
     <span class="hljs-string">"bower"</span>: { <span class="hljs-string">"fs"</span>: <span class="hljs-string">"bower_components"</span> }
   },
-  <span class="hljs-comment">// Global view context module available to rendered views.</span>
+  <span class="hljs-comment">// Global context for rendered views.</span>
   <span class="hljs-string">"contextFile"</span>: <span class="hljs-string">"./view-context.js"</span>,
-  <span class="hljs-comment">// Script and Style bundles</span>
+  <span class="hljs-comment">// Script and Style Bundles</span>
   <span class="hljs-string">"bundle"</span>: {
+    <span class="hljs-comment">// A default highlight.js theme...</span>
+    <span class="hljs-string">"hljs-monokai-sublime"</span>:  {
+      <span class="hljs-string">"styles"</span>: [ <span class="hljs-string">"/lib/css/monokai-sublime.css"</span> ]
+    },
+    <span class="hljs-comment">// jQuery and Bootstrap</span>
     <span class="hljs-string">"jqbs"</span>: {
       <span class="hljs-string">"scripts"</span>: [
         <span class="hljs-string">"/bower_components/jquery/dist/jquery.js"</span>,
         <span class="hljs-string">"/bower_components/bootstrap/dist/js/bootstrap.js"</span>
       ]
     },
+    <span class="hljs-comment">// Knockout</span>
     <span class="hljs-string">"ko"</span>: {
       <span class="hljs-string">"scripts"</span>: [
         {
@@ -23,16 +29,20 @@
         }
       ]
     },
-    <span class="hljs-comment">// The main bundle style `site.css` is compiled from `site.less`, which</span>
+    <span class="hljs-comment">// Main bundle - style `site.css` is compiled from `site.less`, which</span>
     <span class="hljs-comment">// includes bootstrap.</span>
     <span class="hljs-string">"main"</span>: {
       <span class="hljs-string">"scripts"</span>: [
         <span class="hljs-string">"/lib/js/site.js"</span>
       ],
       <span class="hljs-string">"styles"</span>: [
-        <span class="hljs-string">"/lib/css/monokai-sublime.css"</span>,
         <span class="hljs-string">"/lib/css/site.css"</span>
       ]
     }
+    <span class="hljs-comment">// Bundles can be included in your (Jade) template via: </span>
+    <span class="hljs-comment">// `|!{build.bundles(['jqbs', 'ko', 'main'])}`</span>
+    <span class="hljs-comment">// During development, src links are used if specified.</span>
+    <span class="hljs-comment">// Min links, if specified, are used in lieu of minifying the file at </span>
+    <span class="hljs-comment">// generation time.</span>
   }
 }</p></pre></div></div></div><div class="container"><div class="row"><div class="col-xs-12"><div class="text-center"><em class="pull-left">Copyright @ Devoptix LLC 2016</em><em>This site built with <a href="https://github.com/staticbuild/staticbuild">staticbuild</a>.</em><em class="pull-right">staticbuild.github.io v0.0.1 <small>(en) </small>&nbsp;<a href="https://github.com/staticbuild/staticbuild/issues">Help</a></em></div></div></div></div></body></html>
